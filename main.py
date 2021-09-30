@@ -12,10 +12,12 @@ print(""" /$$$$$$$                               /$$$$$$
                                                                     
                                                                     """)
 chars = ['1','2','3','4','5','6','7','8','9','0','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z',"\\",'|',',','<','.','>','/','?',';',':',"'",'@','#','~','`','¬','!','"','£','$','%','^','&','*','(',')','-','_','=','+']
-length = int(input('How long do you want your password to be? '))
+length = input('How long do you want your password to be? ')
 
-if isinstance(length, int) is True:
-    gened = random.choices(chars, k=length)
+numberornot = length.isnumeric()
+
+if numberornot is True:
+    gened = random.choices(chars, k=int(length))
 
     a = ""
     for _ in gened:
@@ -23,5 +25,6 @@ if isinstance(length, int) is True:
     print(a)
 else:
     print('Type a number you twat!')
+input('\nPress Enter To Exit!')
 
 
